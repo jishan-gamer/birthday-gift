@@ -14,23 +14,43 @@
         <h2>Leave a Note... 📝💖</h2>
         <p class="subtitle">Aapko ye surprise kaisa laga? Kuch pyaara sa likho mere liye! ✨</p>
         
-        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" style="margin-top: 20px;">
+        <div style="margin-top: 20px;">
             <textarea 
-                name="message" 
+                id="userMessage" 
                 rows="4" 
                 placeholder="Write your message here... 💕" 
                 required 
                 style="width: 100%; padding: 12px; border-radius: 15px; border: 2px solid #ff758c; font-family: 'Poppins', sans-serif; resize: none; box-sizing: border-box; outline: none; font-size: 14px; background: rgba(255, 255, 255, 0.9);">
             </textarea>
             
-            <button type="submit" class="btn yes-btn" style="width: 100%; margin-top: 15px;">
+            <button type="button" onclick="sendDirectMail()" class="btn yes-btn" style="width: 100%; margin-top: 15px;">
                 Send Message 💌
             </button>
-        </form>
+        </div>
 
         <a href="index.html" style="display: block; margin-top: 20px; color: #ff2e63; font-weight: bold; text-decoration: none; font-size: 14px;">
             Restart Love Story 🔄
         </a>
     </div>
+
+    <script>
+        function sendDirectMail() {
+            // AAPNA REAL GMAIL ID YAHAN DAALEIN
+            const myEmail = "freefireplayer3131@gmail.com"; 
+            
+            const message = document.getElementById("userMessage").value;
+            
+            if (message.trim() === "") {
+                alert("Kripya pehle kuch message likhein! 💕");
+                return;
+            }
+
+            const subject = encodeURIComponent("Birthday Surprise Feedback ❤️");
+            const body = encodeURIComponent(message);
+
+            // Direct Mail Client Open Karega
+            window.location.href = `mailto:${myEmail}?subject=${subject}&body=${body}`;
+        }
+    </script>
 </body>
 </html>
