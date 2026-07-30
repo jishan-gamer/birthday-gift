@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600&display=swap');
+
+/* Dynamic Gradient Animated Background */
+body {
+    background: linear-gradient(-45deg, #ff4e50, #f9d423, #e1eec3, #f05053);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Floating Hearts Layer */
+body::before {
+    content: "❤️ 💖 💕 💗 💓 ✨ 🌸 🔥 💘";
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    font-size: 30px;
+    letter-spacing: 40px;
+    opacity: 0.5;
+    animation: floatHearts 8s linear infinite;
+    pointer-events: none;
+}
+
+/* Glassmorphism Love Card */
+.card {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(12px);
+    padding: 40px 30px;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(255, 75, 92, 0.35),
+                0 0 25px rgba(255, 255, 255, 0.8) inset;
+    border: 2px solid rgba(255, 182, 193, 0.8);
+    text-align: center;
+    width: 85%;
+    max-width: 380px;
+    animation: cardPop 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 10;
+}
+
+/* Romantic Cursive Titles */
+h1, h2 {
+    font-family: 'Dancing Script', cursive;
+    color: #ff2e63;
+    font-size: 38px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(255, 71, 87, 0.2);
+}
+
+.subtitle {
+    color: #444;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Heart Glow Buttons */
+.btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.yes-btn { 
+    background: linear-gradient(45deg, #ff0055, #ff5050);
+    color: white; 
+    box-shadow: 0 5px 20px rgba(255, 0, 85, 0.4);
+}
+
+.yes-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 30px rgba(255, 0, 85, 0.7);
+}
+
+.no-btn { 
+    background-color: #ffffff; 
+    color: #ff4757; 
+    border: 2px solid #ff4757;
+}
+
+/* Interactive Gift Box with Beat Animation */
+.gift-box {
+    margin-top: 25px;
+    padding: 16px;
+    background: linear-gradient(45deg, #ff2e63, #ff0055);
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 8px 20px rgba(255, 46, 99, 0.4);
+    transition: all 0.3s ease;
+    animation: heartBeat 1.5s infinite;
+}
+
+.gift-box:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 28px rgba(255, 0, 85, 0.6);
+}
+
+/* Animations */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes floatHearts {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes cardPop {
+    0% { opacity: 0; transform: scale(0.6) translateY(40px); }
+    100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    14% { transform: scale(1.06); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.06); }
+    70% { transform: scale(1); }
+}
