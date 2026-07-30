@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Me A Note 💌</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        if (performance.navigation.type === 1) { window.location.href = "index.html"; }
+    </script>
+</head>
+<body>
+    <div class="card" style="max-width: 420px;">
+        <h2>Leave a Note... 📝💖</h2>
+        <p class="subtitle">Aapko ye surprise kaisa laga? Kuch pyaara sa likho mere liye! ✨</p>
+        
+        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" style="margin-top: 20px;">
+            <textarea 
+                name="message" 
+                rows="4" 
+                placeholder="Write your message here... 💕" 
+                required 
+                style="width: 100%; padding: 12px; border-radius: 15px; border: 2px solid #ff758c; font-family: 'Poppins', sans-serif; resize: none; box-sizing: border-box; outline: none; font-size: 14px; background: rgba(255, 255, 255, 0.9);">
+            </textarea>
+            
+            <button type="submit" class="btn yes-btn" style="width: 100%; margin-top: 15px;">
+                Send Message 💌
+            </button>
+        </form>
+
+        <a href="index.html" style="display: block; margin-top: 20px; color: #ff2e63; font-weight: bold; text-decoration: none; font-size: 14px;">
+            Restart Love Story 🔄
+        </a>
+    </div>
+</body>
+</html>
